@@ -1,0 +1,13 @@
+[2023-12-18T03:26:06.299+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: example_dag_decorator.prepare_email manual__2023-12-18T03:25:49+00:00 [queued]>
+[2023-12-18T03:26:06.306+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: example_dag_decorator.prepare_email manual__2023-12-18T03:25:49+00:00 [queued]>
+[2023-12-18T03:26:06.306+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-12-18T03:26:06.370+0000] {taskinstance.py:1382} INFO - Executing <Task(_PythonDecoratedOperator): prepare_email> on 2023-12-18 03:25:49+00:00
+[2023-12-18T03:26:06.379+0000] {standard_task_runner.py:57} INFO - Started process 1192 to run task
+[2023-12-18T03:26:06.396+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'example_dag_decorator', 'prepare_email', 'manual__2023-12-18T03:25:49+00:00', '--job-id', '360', '--raw', '--subdir', '/usr/local/lib/python3.10/dist-packages/airflow/example_dags/example_dag_decorator.py', '--cfg-path', '/tmp/tmpxd52a9xy']
+[2023-12-18T03:26:06.398+0000] {standard_task_runner.py:85} INFO - Job 360: Subtask prepare_email
+[2023-12-18T03:26:06.458+0000] {task_command.py:416} INFO - Running <TaskInstance: example_dag_decorator.prepare_email manual__2023-12-18T03:25:49+00:00 [running]> on host ip-172-31-6-101.ca-central-1.compute.internal
+[2023-12-18T03:26:06.532+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='example_dag_decorator' AIRFLOW_CTX_TASK_ID='prepare_email' AIRFLOW_CTX_EXECUTION_DATE='2023-12-18T03:25:49+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-18T03:25:49+00:00'
+[2023-12-18T03:26:06.535+0000] {python.py:194} INFO - Done. Returned value was: {'subject': 'Server connected from 3.96.46.47', 'body': 'Seems like today your server executing Airflow is connected from IP 3.96.46.47<br>'}
+[2023-12-18T03:26:06.575+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=example_dag_decorator, task_id=prepare_email, execution_date=20231218T032549, start_date=20231218T032606, end_date=20231218T032606
+[2023-12-18T03:26:06.609+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-12-18T03:26:06.626+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

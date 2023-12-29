@@ -1,0 +1,22 @@
+[2023-12-18T01:42:31.570+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: bitkub_dag.complete_Bitkub_etl scheduled__2021-01-18T00:00:00+00:00 [queued]>
+[2023-12-18T01:42:31.576+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: bitkub_dag.complete_Bitkub_etl scheduled__2021-01-18T00:00:00+00:00 [queued]>
+[2023-12-18T01:42:31.576+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2023-12-18T01:42:31.709+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): complete_Bitkub_etl> on 2021-01-18 00:00:00+00:00
+[2023-12-18T01:42:31.716+0000] {standard_task_runner.py:57} INFO - Started process 1417 to run task
+[2023-12-18T01:42:31.721+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'bitkub_dag', 'complete_Bitkub_etl', 'scheduled__2021-01-18T00:00:00+00:00', '--job-id', '315', '--raw', '--subdir', 'DAGS_FOLDER/bitkub_dag.py', '--cfg-path', '/tmp/tmpu4tm9qae']
+[2023-12-18T01:42:31.721+0000] {standard_task_runner.py:85} INFO - Job 315: Subtask complete_Bitkub_etl
+[2023-12-18T01:42:31.764+0000] {task_command.py:416} INFO - Running <TaskInstance: bitkub_dag.complete_Bitkub_etl scheduled__2021-01-18T00:00:00+00:00 [running]> on host ip-172-31-6-101.ca-central-1.compute.internal
+[2023-12-18T01:42:31.826+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='airflow@example.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='bitkub_dag' AIRFLOW_CTX_TASK_ID='complete_Bitkub_etl' AIRFLOW_CTX_EXECUTION_DATE='2021-01-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2021-01-18T00:00:00+00:00'
+[2023-12-18T01:42:31.828+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/usr/local/lib/python3.10/dist-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/airflow/bitkub_dag/bitkub_etl.py", line 55, in Bitkub_etl
+    list_btc=[data_json]
+UnboundLocalError: local variable 'data_json' referenced before assignment
+[2023-12-18T01:42:31.832+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=bitkub_dag, task_id=complete_Bitkub_etl, execution_date=20210118T000000, start_date=20231218T014231, end_date=20231218T014231
+[2023-12-18T01:42:31.845+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 315 for task complete_Bitkub_etl (local variable 'data_json' referenced before assignment; 1417)
+[2023-12-18T01:42:31.853+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-18T01:42:31.865+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
