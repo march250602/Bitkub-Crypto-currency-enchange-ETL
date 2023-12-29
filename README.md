@@ -6,7 +6,7 @@
 ## Technology Used
 Programming Language -> Python
 
-ETL -> Apache Airflow
+Data pipeline tool -> Apache Airflow
 
 API -> BitKub API
 
