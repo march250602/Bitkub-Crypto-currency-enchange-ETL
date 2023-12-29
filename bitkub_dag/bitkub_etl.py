@@ -23,8 +23,8 @@ def Bitkub_etl():
         
         host = 'https://api.bitkub.com'
         path = '/api/market/ticker'
-        api_key = 'f8240f32ea4322b57d829a08a60baeb5797d9a040e730f704e5b271ca14cd93f'
-        api_secret = '236f68e6008341959887e3b81e239da06bbe95da382b412a929f8caa40768b0cGgNIm3BhIzAYLfpJHrGVPA0NuURv'
+        api_key = 'your api_key'
+        api_secret = 'your api_secret'
         
         ts = str(round(time.time() * 1000))
         param = {
